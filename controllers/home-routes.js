@@ -1,9 +1,30 @@
 const router = require('express').Router();
-
+// home page
 router.get('/', async (req, res) => {
-    // Add a comment describing the purpose of the render method
-    // This method is rendering the 'all' Handlebars.js template. This is how we connect each route to the correct template.
-    res.render('homepage');
-  });
 
-  module.exports = router;
+  res.render('homepage');
+});
+
+//user dashboard
+router.get('/dahsboard', async (req, res) => {
+
+  try {
+    
+    res.render('dashboard');
+  } catch (err) {
+    res.status(500).json(err)
+  }
+
+})
+
+// login page
+router.get('/login', async (req, res) => {
+
+  // if (req.session.logged_in) {
+  //   res.redirect('/');
+  //   return;
+  // }
+  res.render('login');
+})
+
+module.exports = router;
