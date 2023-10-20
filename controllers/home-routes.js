@@ -1,20 +1,29 @@
+const { BlogPost, User } = require('../models');
+
 const router = require('express').Router();
 // home page
 router.get('/', async (req, res) => {
+  try {
+    const blogPostData = await BlogPost.findAll({
+      include: User
+    });
 
-  res.render('homepage');
+    const blogPosts = blogPostData.map((post) => post.get({ plain: true }));
+
+    res.render('homepage', {blogPosts});
+  } catch (err) {
+    res.status(500).json(err)
+  }
 });
 
 //user dashboard
 router.get('/dahsboard', async (req, res) => {
 
   try {
-    
     res.render('dashboard');
   } catch (err) {
     res.status(500).json(err)
   }
-
 })
 
 // login page
