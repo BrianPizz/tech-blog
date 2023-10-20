@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 });
 
 //user dashboard
-router.get('/dahsboard', async (req, res) => {
+router.get('/dashboard', async (req, res) => {
 
   try {
     res.render('dashboard');
