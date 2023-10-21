@@ -1,0 +1,54 @@
+/* Custom Form Styles */
+.custom-form {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Form Headers (Login and Sign Up) */
+.custom-form h2 {
+    color: #343a40;
+}
+
+/* Form Fields */
+.custom-form .form-group {
+    margin-bottom: 15px;
+}
+
+/* Labels */
+.custom-form label {
+    display: block;
+    font-weight: bold;
+    color: #6c757d;
+}
+
+/* Text Inputs */
+.custom-form input[type="text"],
+.custom-form input[type="email"],
+.custom-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+/* Login and Sign Up Buttons */
+.custom-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.custom-form button:hover {
+    background-color: #0056b3;
+}
+
+.custom-form{
+    margin-top: 75px;
+}
