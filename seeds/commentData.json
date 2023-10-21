@@ -2,7 +2,7 @@
     {
         "description": "iRobot! iRobot!",
         "date_added": "January 17, 2024",
-        "user_id": 1,
+        "user_id": 2,
         "blog_post_id": 1
     },
     {
@@ -14,13 +14,13 @@
     {
         "description": "I use the same password for everything 😳",
         "date_added": "March 22, 2024",
-        "user_id": 3,
+        "user_id": 2,
         "blog_post_id": 3 
     },
     {
         "description": "I love my macbook air",
         "date_added": "April, 19, 2024",
-        "user_id": 2,
+        "user_id": 1,
         "blog_post_id": 4 
     },
     {
@@ -32,13 +32,13 @@
     {
         "description": "🐬",
         "date_added": "May 17, 2024",
-        "user_id": 3,
+        "user_id": 1,
         "blog_post_id": 5
     },
     {
         "description": "😂😂😂",
         "date_added": "November 10, 2024",
-        "user_id": 1,
+        "user_id": 2,
         "blog_post_id": 6
     },
     {
