@@ -1,4 +1,4 @@
-const { BlogPost, User } = require('../models');
+const { BlogPost, User, Comment } = require('../models');
 
 const router = require('express').Router();
 // home page
@@ -10,11 +10,38 @@ router.get('/', async (req, res) => {
 
     const blogPosts = blogPostData.map((post) => post.get({ plain: true }));
 
-    res.render('homepage', {blogPosts});
+    res.render('homepage', { blogPosts });
   } catch (err) {
     res.status(500).json(err)
   }
 });
+
+//specific post with comments
+router.get('/post/:id', async (req, res) => {
+  try {
+    // Fetch the blog post
+    const blogPostData = await BlogPost.findByPk(req.params.id, {
+      include: [
+        {
+          model: Comment,
+          include: User,
+        },
+        {
+          model: User,
+        },
+      ],
+    });
+
+    const blogPost = blogPostData.get({ plain: true });
+
+    res.render('blogPost', {
+      blogPost,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 //user dashboard
 router.get('/dashboard', async (req, res) => {
