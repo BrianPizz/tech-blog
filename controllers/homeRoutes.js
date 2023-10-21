@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 });
 
 //specific post with comments
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', withAuth, async (req, res) => {
   try {
     // Fetch the blog post
     const blogPostData = await BlogPost.findByPk(req.params.id, {
@@ -50,8 +50,15 @@ router.get('/post/:id', async (req, res) => {
 //user dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: BlogPost, include: [User] }],
+    });
+
+    const user = userData.get({ plain: true});
 
     res.render('dashboard',{
+      ...user,
       logged_in: true
     });
   } catch (err) {
