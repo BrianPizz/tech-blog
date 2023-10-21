@@ -1,22 +1,23 @@
 <div class="row justify-content-center">
     {{#if blogPosts.length}}
-    <div class="col-md-6">
+    <div class="col-md-6 post-list">
         <h3 class="mb-4">{{name}}'s Blog:</h3>
 
         {{#each blogPosts as |blogPost|}}
-        <a href="/post/{{id}}" class="text-reset text-decoration-none">
-            <div class="card mb-3">
+        <div class="card my-3">
+            <a href="/post/{{id}}" class="text-reset text-decoration-none">
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
                     <p>{{description}}</p>
-                    <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+            </a>
+        <button class="btn btn-sm btn-danger btn-delete" data-id="{{id}}">DELETE</button>
                 </div>
-            </div>
-        </a>
+        </div>
         {{/each}}
     </div>
     {{/if}}
 </div>
+
 
 <!-- Button trigger modal -->
 <div class="row">

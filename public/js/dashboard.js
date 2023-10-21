@@ -20,4 +20,25 @@ const createBlogPost = async (event) => {
     }
 };
 
+// ...
+
+const deleteBlogPost = async (event) => {
+    if (event.target.classList.contains('btn-delete')) {
+        const id = event.target.getAttribute('data-id');
+
+        const response = await fetch(`/api/post/${id}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            document.location.replace('/dashboard');
+        } else {
+            alert('Failed to delete blog post');
+        }
+    }
+}
+
 document.querySelector('#post').addEventListener('click', createBlogPost);
+
+// Use event delegation for delete buttons
+document.querySelector('.post-list').addEventListener('click', deleteBlogPost);
