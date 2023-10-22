@@ -3,7 +3,14 @@
         <div class="custom-card">
             <div class="bg-dark text-light p-2 d-flex justify-content-between">
                 <h3>{{blogPost.title}}</h3>
+                {{#if blogPost.date_updated}}
+                <div>
+                <em class="lead text-secondary fs-6 me-1">edited</em>
+                <em class="my-auto">{{format_date blogPost.date_updated}}</em>
+                </div>
+                {{else}}
                 <em class="my-auto">{{format_date blogPost.date_created}}</em>
+                {{/if}}
             </div>
             <div class="px-2 pt-2 my-1">
                 <h5 class="lead">{{blogPost.description}}</h5>
