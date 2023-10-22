@@ -28,6 +28,7 @@
 </div>
 {{/each}}
 
+{{#if logged_in}}
 <div class="row">
     <div class="col-6">
         <div class="custom-card">
@@ -41,3 +42,12 @@
 </div>
 
 <script src="/js/comment.js"></script>
+
+{{else}}
+<div class="row">
+    <div class="col text-center">
+        <p class="lead text-secondary mt-4"><em>Log in to leave a comment!</em></p>
+    </div>
+</div>
+{{/if}}
+

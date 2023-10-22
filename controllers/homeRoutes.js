@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 });
 
 //specific post with comments
-router.get('/post/:id', withAuth, async (req, res) => {
+router.get('/post/:id', async (req, res) => {
   try {
     // Fetch the blog post
     const blogPostData = await BlogPost.findByPk(req.params.id, {
