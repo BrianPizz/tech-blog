@@ -47,25 +47,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
 });
 
 
-//user dashboard
-router.get('/dashboard', withAuth, async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: BlogPost, include: [User] }],
-    });
-
-    const user = userData.get({ plain: true});
-
-    res.render('dashboard',{
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
-
 // login page
 router.get('/login', async (req, res) => {
 
