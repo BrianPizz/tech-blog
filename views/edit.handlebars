@@ -1,0 +1,37 @@
+<div class="row my-4">
+    <div class="col post-item">
+        <div class="custom-card">
+            <div class="bg-dark text-light p-2 d-flex justify-content-between">
+                <h3>{{title}}</h3>
+                <em class="my-auto">{{format_date date_created}}</em>
+            </div>
+            <div class="px-2 pt-2 my-1 d-flex justify-content-between">
+                <div>
+                   <h5 class="lead">{{description}}</h5>
+                <p class="blockquote-footer custom-at mt-1">@{{user.name}}</p> 
+                </div>
+                <div>
+                    <button class="btn btn-danger btn-delete me-2 mt-2" data-id="{{id}}">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#each comments}}
+<div class="row my-4">
+    <div class="col-6">
+        <div class="custom-card">
+            <div class="mb-1 p-2 d-flex justify-content-between">
+                <h5 class="lead">{{description}}</h5>
+                <em><small class="text-secondary">{{format_date date_added}}</small></em>
+            </div>
+            <div class="px-2">
+                <p class="blockquote-footer custom-at"> @{{user.name}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+<script src="/js/edit.js"></script>
