@@ -20,8 +20,6 @@ const createBlogPost = async (event) => {
     }
 };
 
-// ...
-
 const deleteBlogPost = async (event) => {
     if (event.target.classList.contains('btn-delete')) {
         const id = event.target.getAttribute('data-id');
@@ -40,5 +38,4 @@ const deleteBlogPost = async (event) => {
 
 document.querySelector('#post').addEventListener('click', createBlogPost);
 
-// Use event delegation for delete buttons
 document.querySelector('.post-list').addEventListener('click', deleteBlogPost);
