@@ -11,6 +11,7 @@
                 <p class="blockquote-footer custom-at mt-1">@{{user.name}}</p> 
                 </div>
                 <div>
+                    <button class="btn btn-secondary btn-update me-2 mt-2" data-id="{{id}}" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
                     <button class="btn btn-danger btn-delete me-2 mt-2" data-id="{{id}}">Delete</button>
                 </div>
             </div>
@@ -33,5 +34,39 @@
     </div>
 </div>
 {{/each}}
+
+<!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content custom-modal">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Blog Post</h5>
+                    </div>
+                    <div class="modal-body">
+
+                        <form class="mt-3">
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="title" name="title"
+                                    placeholder="Enter title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="content" class="form-label">Content</label>
+                                <textarea class="form-control" id="content" name="content" rows="6"
+                                    placeholder="Enter description" required></textarea>
+                            </div>
+                        </form>
+
+
+                    </div>
+                    <div class="mb-3 mx-auto">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="custom-button btn" id="post">Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 <script src="/js/edit.js"></script>
