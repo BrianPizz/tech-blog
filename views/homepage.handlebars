@@ -1,15 +1,15 @@
 {{#each blogPosts as |blogPost|}}
 <div class="row my-4">
     <div class="col">
-        <div class="card">
+        <div class="custom-card">
         <a href="/post/{{id}}" class='text-reset text-decoration-none'>
-            <div class="card-header d-flex justify-content-between">
+            <div class="bg-dark text-light p-2 d-flex justify-content-between">
                 <h3>{{title}}</h3>
-                <em class="my-auto">{{date_created}}</em>
+                <em class="my-auto">{{format_date date_created}}</em>
             </div>
-            <div class="card-body">
-                <h5>{{description}}</h5>
-                <p>@{{user.name}}</p>
+            <div class="px-2 pt-2 my-1">
+                <h5 class="lead">{{description}}</h5>
+                <p class="blockquote-footer custom-at mt-1">@{{user.name}}</p>
             </div>
         </a>
         </div>

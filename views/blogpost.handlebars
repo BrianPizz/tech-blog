@@ -1,29 +1,41 @@
 <div class="row my-4">
     <div class="col">
-        <div class="card">
-            <div class="card-header d-flex justify-content-between">
+        <div class="custom-card">
+            <div class="bg-dark text-light p-2 d-flex justify-content-between">
                 <h3>{{blogPost.title}}</h3>
-                <em class="my-auto">{{blogPost.date_created}}</em>
+                <em class="my-auto">{{format_date blogPost.date_created}}</em>
             </div>
-            <div class="card-body">
-                <h5>{{blogPost.description}}</h5>
-                <p>@{{blogPost.user.name}}</p>
+            <div class="px-2 pt-2 my-1">
+                <h5 class="lead">{{blogPost.description}}</h5>
+                <p class="blockquote-footer custom-at mt-1">@{{blogPost.user.name}}</p>
             </div>
         </div>
     </div>
 </div>
 {{#each blogPost.comments}}
 <div class="row my-4">
-    <div class="col">
-        <div class="card">
-            <div class="card-header d-flex justify-content-between">
-                <h3>{{user.name}}</h3>
-                <em class="my-auto">{{date_added}}</em>
+    <div class="col-6">
+        <div class="custom-card">
+            <div class="mb-1 p-2 d-flex justify-content-between">
+                <h5 class="lead">{{description}}</h5>
+                <em><small class="text-secondary">{{format_date date_added}}</small></em>
             </div>
-            <div class="card-body">
-                <h5>{{description}}</h5>
+            <div class="px-2">
+                <p class="blockquote-footer custom-at"> @{{user.name}}</p>
             </div>
         </div>
     </div>
 </div>
 {{/each}}
+
+<div class="row">
+    <div class="col-6">
+        <div class="custom-card">
+            <div class="mx-3 mb-3 mt-2">
+                <label class="form-label text-secondary">Add a Comment</label>
+                <textarea class="form-control" id="comment" rows="3" placeholder="Comment..."></textarea>
+                <butto class="custom-button btn mt-3">Post</butto>
+            </div>
+        </div>
+    </div>
+</div>

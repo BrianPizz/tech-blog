@@ -1,16 +1,41 @@
-/* Custom Form Styles */
-.custom-form {
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+:root {
+    --primary-background: #34554b;
+    --primary-text: #fff;
+    --secondary-background: #0E0E0E;
+    --accent: #4285F4;
+    --button: #9b91ff;
+    --border-color: #333333;
+    --highlight: #ef5675;
 }
 
-/* Form Headers (Login and Sign Up) */
-.custom-form h2 {
-    color: #343a40;
+/* Custom Username Styles*/
+.custom-at {
+    font-size: 1rem;
+}
+
+body {
+    background-color: var(--primary-background);
+    color: var(--primary-text);
+}
+
+.custom-nav {
+    background-color: var(--secondary-background);
+}
+
+/* Custom Post Styles */
+.custom-card {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+background-color: var(--secondary-background);
+    overflow: hidden;
+    box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.75);
+-webkit-box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.75);
+}
+
+/* Custom Form Styles */
+.custom-form {
+    padding: 20px;
 }
 
 /* Form Fields */
@@ -22,7 +47,6 @@
 .custom-form label {
     display: block;
     font-weight: bold;
-    color: #6c757d;
 }
 
 /* Text Inputs */
@@ -37,18 +61,27 @@
 
 /* Login and Sign Up Buttons */
 .custom-form button {
-    background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
 }
-
-.custom-form button:hover {
-    background-color: #0056b3;
+/* Custom Button */
+.custom-button{
+    background-color: var(--button);
 }
 
-.custom-form{
+.custom-button:hover {
+    background-color: var(--highlight);
+}
+
+.custom-form {
     margin-top: 75px;
 }
+
+/* Custom Modal Styles */
+.custom-modal {
+    background-color: var(--primary-background);
+}
+
