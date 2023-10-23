@@ -34,8 +34,9 @@
                 <h5 class="lead">{{description}}</h5>
                 <em><small class="text-secondary">{{format_date date_added}}</small></em>
             </div>
-            <div class="px-2">
+            <div class="px-2 d-flex justify-content-between">
                 <p class="blockquote-footer custom-at"> @{{user.name}}</p>
+            <button class="btn btn-danger btn-delete-comment me-2 mb-2" data-id="{{id}}">Delete</button>
             </div>
         </div>
     </div>

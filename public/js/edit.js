@@ -16,7 +16,7 @@ const deleteBlogPost = async (event) => {
     };
 };
 
-const updateBlogPost = async (event) => {
+const updateBlogPost = async () => {
 
     const title = document.querySelector('#title').value.trim();
     const description = document.querySelector('#content').value.trim();
@@ -38,7 +38,29 @@ const updateBlogPost = async (event) => {
             alert(response.statusText)
         }
     };
-}
+};
+
+const deleteComment = async(event) => {
+    
+        const id = event.target.getAttribute('data-id');
+
+        const response = await fetch(`/api/comment/${id}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            document.location.reload();
+        } else {
+            alert('Failed to delete blog post');
+        }
+};
+
 
 document.querySelector('.btn-delete').addEventListener('click', deleteBlogPost);
 document.querySelector('.btn-update').addEventListener('click', updateBlogPost);
+
+const commentDeleteBtn = document.querySelectorAll('.btn-delete-comment');
+
+commentDeleteBtn.forEach((button) => {
+    button.addEventListener('click', deleteComment);
+});
