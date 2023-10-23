@@ -5,8 +5,8 @@
                 <h3>{{blogPost.title}}</h3>
                 {{#if blogPost.date_updated}}
                 <div>
-                <em class="lead text-secondary fs-6 me-1">edited</em>
-                <em class="my-auto">{{format_date blogPost.date_updated}}</em>
+                    <em class="lead text-secondary fs-6 me-1">edited</em>
+                    <em class="my-auto">{{format_date blogPost.date_updated}}</em>
                 </div>
                 {{else}}
                 <em class="my-auto">{{format_date blogPost.date_created}}</em>
@@ -19,21 +19,26 @@
         </div>
     </div>
 </div>
-{{#each blogPost.comments}}
-<div class="row my-4">
+
+{{#each comments}}
+  <div class="row my-4">
     <div class="col-6">
-        <div class="custom-card">
-            <div class="mb-1 p-2 d-flex justify-content-between">
-                <h5 class="lead">{{description}}</h5>
-                <em><small class="text-secondary">{{format_date date_added}}</small></em>
-            </div>
-            <div class="px-2">
-                <p class="blockquote-footer custom-at"> @{{user.name}}</p>
-            </div>
+      <div class="custom-card">
+        <div class="mb-1 p-2 d-flex justify-content-between">
+          <h5 class="lead">{{description}}</h5>
+          <em><small class="text-secondary">{{format_date date_added}}</small></em>
         </div>
+        <div class="px-2 d-flex justify-content-between">
+          <p class="blockquote-footer custom-at"> @{{user.name}}</p>
+          {{#if isOwner}}
+          <button class="btn btn-danger btn-delete-comment me-2 mb-2" data-id="{{id}}">Delete</button>
+          {{/if}}
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 {{/each}}
+
 
 {{#if logged_in}}
 <div class="row">
@@ -53,8 +58,7 @@
 {{else}}
 <div class="row">
     <div class="col text-center">
-        <p class="lead text-secondary mt-4"><em>Log in to leave a comment!</em></p>
+        <p class="lead text-secondary mt-4"><em>Log in or Sign up to leave a comment!</em></p>
     </div>
 </div>
 {{/if}}
-
