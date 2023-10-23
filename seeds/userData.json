@@ -16,5 +16,11 @@
         "name":"MR. O",
         "email":"camo@gmail.com",
         "password":"asdfghj"
+    },
+    {
+        "id": 4,
+        "name":"mlew",
+        "email":"m@gmail.com",
+        "password":"zxcvbn"
     }
 ]

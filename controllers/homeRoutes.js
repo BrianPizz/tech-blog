@@ -6,7 +6,8 @@ const router = require('express').Router();
 router.get('/', async (req, res) => {
   try {
     const blogPostData = await BlogPost.findAll({
-      include: User
+      include: User,
+      order: [['date_created', 'DESC']],
     });
 
     const blogPosts = blogPostData.map((post) => post.get({ plain: true }));
