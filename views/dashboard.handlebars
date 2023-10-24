@@ -2,7 +2,7 @@
     <div class="col-md-6 post-list">
         {{#if blogPosts.length}}
         <h3 class="my-4">{{name}}'s Blog:</h3>
-
+        {{!-- loop through and display user posts --}}
         {{#each blogPosts as |blogPost|}}
         <div class="row my-4">
             <div class="col">
@@ -31,15 +31,12 @@
     </div>
 </div>
 {{else}}
+{{!-- display if no posts --}}
 <div class="col text-center">
     <h1 class="my-4">You have not created any posts!</h1>
 </div>
 {{/if}}
 </div>
-
-
-
-
 
 <div class="row">
     <div class="col d-flex justify-content-center">
@@ -65,7 +62,6 @@
                                     placeholder="Enter description" required></textarea>
                             </div>
                         </form>
-
 
                     </div>
                     <div class="mb-3 mx-auto">
