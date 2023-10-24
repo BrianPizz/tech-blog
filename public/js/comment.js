@@ -40,7 +40,7 @@ const deleteComment = async(event) => {
     if (response.ok) {
         document.location.reload();
     } else {
-        alert('Failed to delete blog post');
+        alert('Failed to delete comment');
     }
 };
 

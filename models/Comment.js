@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection');
-
+// create sequelize model for comments
 class Comment extends Model {}
 
 Comment.init(
@@ -42,7 +41,7 @@ Comment.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'comment',
-      }
+    }
 );
 
 module.exports = Comment;

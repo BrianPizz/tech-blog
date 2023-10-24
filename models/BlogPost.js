@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
-
+// create sequelize model for blog posts
 class BlogPost extends Model {}
 
 BlogPost.init(
@@ -26,6 +25,7 @@ BlogPost.init(
             defaultValue: DataTypes.NOW,
         },
         date_updated: {
+            // value will only be added after update
             type: DataTypes.DATE,
             allowNull: true,
         },
@@ -43,7 +43,7 @@ BlogPost.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'blogPost',
-      }
-    );
+    }
+);
 
-    module.exports = BlogPost;
+module.exports = BlogPost;

@@ -1,9 +1,11 @@
 const router = require('express').Router();
 const { BlogPost } = require('../../models');
+// verify user is logged in helper function
 const withAuth = require("../../utils/auth");
 
+// create blog post
 router.post('/', withAuth, async (req, res) => {
-    console.log(req.body)
+    // create new BlogPost with logged in users id
     try {
         const blogPostData = await BlogPost.create({
             ...req.body,
@@ -16,7 +18,9 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
+// delete a blog post
 router.delete('/:id', withAuth, async (req, res) => {
+    // locate target post via url id and logged in user id
     try {
         const blogPostData = await BlogPost.destroy({
             where: {
@@ -24,7 +28,7 @@ router.delete('/:id', withAuth, async (req, res) => {
                 user_id: req.session.user_id,
             }
         });
-
+        // verify id
         if (!blogPostData) {
             res.status(404).json({ message: 'No blog post found with this id!' });
             return;
@@ -35,19 +39,22 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 });
 
+// update a blog post
 router.put('/:id', withAuth, async (req, res) => {
+    // locate target post via url id and logged in user id
+    // update blog post content and date
     try {
         const blogPostData = await BlogPost.update({
             ...req.body,
             date_updated: new Date(),
-        }, 
-        {
-            where: {
-                id: req.params.id,
-                user_id: req.session.user_id,
-            }
-        });
-
+        },
+            {
+                where: {
+                    id: req.params.id,
+                    user_id: req.session.user_id,
+                }
+            });
+        // verify id
         if (!blogPostData) {
             res.status(404).json({ message: 'No blog post found with this id!' });
             return;
