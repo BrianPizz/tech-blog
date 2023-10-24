@@ -1,3 +1,4 @@
+// log out user
 const logoutHandler = async () => {
   const response = await fetch("/api/users/logout", {
     method: "POST",
@@ -11,13 +12,5 @@ const logoutHandler = async () => {
   }
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-    const logoutButton = document.querySelector('#logout');
-
-    if (logoutButton) {
-        logoutButton.addEventListener('click', logoutHandler);
-    }
-});
-
-
-// console.log('Logout JavaScript file loaded');
+// event listener, verifies document is completely parsed 
+document.querySelector('#logout').addEventListener('click', logoutHandler)
