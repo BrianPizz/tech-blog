@@ -86,10 +86,15 @@ background-color: var(--secondary-background);
     background-color: var(--primary-background);
 }
 
-/* Sign up button style */
+/* Sign up button styles */
 .btn-signup{
     background: transparent;
     border: none;
     color: var(--accent);
     text-decoration-line: underline;
-};
+}
+
+/* Custom sign up form styles */
+#signupForm{
+    margin-top: 0;
+}
