@@ -86,3 +86,10 @@ background-color: var(--secondary-background);
     background-color: var(--primary-background);
 }
 
+/* Sign up button style */
+.btn-signup{
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    text-decoration-line: underline;
+};
