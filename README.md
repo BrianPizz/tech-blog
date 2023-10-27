@@ -21,8 +21,7 @@ Deployment link
 
 [techBlog](Link)
 
-
-![](assets/images/.png)
+![techBlog](https://github.com/BrianPizz/tech-blog/assets/138056153/e9602a00-24b3-46df-b14b-706501d8b206)
 
 
 
