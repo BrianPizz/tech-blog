@@ -14,12 +14,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 // session and cookie attributes
 const sess = {
-  secret: 'Super secret secret',
+  secret: 'Super Secret',
   cookie: {
-    maxAge: 300000,
-    httpOnly: true,
-    secure: false,
-    sameSite: 'strict',
+    maxAge: 24 * 60 * 60 * 1000
   },
   resave: false,
   saveUninitialized: true,
