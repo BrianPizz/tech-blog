@@ -56,7 +56,7 @@ router.get('/post/:id', async (req, res) => {
       };
     });
     // render blog posts, comments, and blogPost view 
-    res.render('blogPost', {
+    res.render('blogpost', {
       blogPost,
       comments,
       logged_in: req.session.logged_in
