@@ -19,7 +19,7 @@ Deployed on heroku
 ## Usage
 Deployment link
 
-[techBlog](Link)
+[techBlog](https://secret-earth-93021-43fb7762532d.herokuapp.com/)
 
 ![techBlog (1)](https://github.com/BrianPizz/tech-blog/assets/138056153/9fe6d958-c074-40df-b202-1644a413f897)
 
