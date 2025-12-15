@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
-// Create connection object
+
 let sequelize;
 
 if (process.env.JAWSDB_URL) {
@@ -11,9 +11,16 @@ if (process.env.JAWSDB_URL) {
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
-      host: 'localhost',
-      dialect: 'mysql',
-      port: 3306
+      host: process.env.DB_HOST,
+      port: process.env.DB_PORT,
+      dialect: "mysql",
+      logging: false,
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false
+        }
+      }
     }
   );
 }
