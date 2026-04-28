@@ -16,7 +16,18 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert(response.statusText);
+      let message = 'Unable to sign up. Please check your email and password and try again.';
+
+      try {
+        const data = await response.json();
+        if (data.message) {
+          message = data.message;
+        }
+      } catch (err) {
+        console.error('Error parsing JSON response:', err);
+      }
+
+      alert(message);
     }
   }
 };

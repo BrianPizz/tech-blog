@@ -13,8 +13,21 @@ router.post('/', async (req, res) => {
             res.status(200).json(userData);
         });
     } catch (err) {
-        res.status(400).json(err);
-    }
+        let message = 'Unable to sign up. Please verify your information and try again.';
+        if (err.name === 'SequelizeUniqueConstraintError') {
+          message = 'An account with this email already exists.';
+        } else if (err.name === 'SequelizeValidationError') {
+          const validationError = err.errors?.[0];
+          if (validationError?.path === 'email' && validationError?.validatorKey === 'isEmail') {
+            message = 'Please enter a valid email address.';
+          } else if (validationError?.path === 'password' && validationError?.validatorKey === 'len') {
+            message = 'Password must be at least 8 characters long.';
+          } else if (validationError?.message) {
+            message = validationError.message;
+          }
+        }
+        res.status(400).json({ message });
+      }
 });
 
 // log in user

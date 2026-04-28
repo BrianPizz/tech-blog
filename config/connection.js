@@ -4,8 +4,10 @@ require('dotenv').config();
 let sequelize;
 
 if (process.env.JAWSDB_URL) {
+  console.log('Using JAWSDB_URL');
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
+  console.log('Using individual DB_* vars');
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
@@ -13,14 +15,8 @@ if (process.env.JAWSDB_URL) {
     {
       host: process.env.DB_HOST,
       port: process.env.DB_PORT,
-      dialect: "mysql",
+      dialect: 'mysql',
       logging: false,
-      dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false
-        }
-      }
     }
   );
 }
