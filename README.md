@@ -14,12 +14,12 @@
 * [Questions](#questions)
 
 ## Installation
-Deployed on heroku
+Deployed on Render with Aiven MySQL db hsoting.
 
 ## Usage
 Deployment link
 
-[techBlog](https://secret-earth-93021-43fb7762532d.herokuapp.com/)
+[techBlog](https://tech-blog-42fy.onrender.com/)
 
 ![techBlog (1)](https://github.com/BrianPizz/tech-blog/assets/138056153/9fe6d958-c074-40df-b202-1644a413f897)
 
